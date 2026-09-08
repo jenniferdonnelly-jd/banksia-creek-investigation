@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banksia Creek Investigation | Build Your Case</title>
+
+<style>
+:root{
+  --navy:#20364d; --darknavy:#142638; --gold:#c9a54a; --rust:#a64b2a;
+  --paper:#f4f0e7; --cream:#fbf8f1; --ink:#1c2430; --grey:#66717a;
+  --line:#c8c2b8; --green:#58705a; --blue:#416a88;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+.top-strip{
+  background:var(--darknavy);color:#dce5ea;padding:8px 5%;
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+}
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;border-bottom:6px solid var(--gold);
+}
+.header-inner{max-width:1150px;margin:auto;padding:38px 25px 34px}
+.case-label{
+  color:#ecdca8;font-size:13px;letter-spacing:3px;
+  text-transform:uppercase;font-weight:bold;
+}
+header h1{font-family:Georgia,serif;font-size:55px;margin:8px 0 4px}
+header p{margin:0;font-size:17px}
+nav{
+  background:white;border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:1150px;margin:auto;display:flex;overflow-x:auto;padding:8px 15px;
+}
+nav a{
+  text-decoration:none;color:var(--navy);font-size:14px;font-weight:bold;
+  padding:10px 13px;border-radius:6px;white-space:nowrap;
+}
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+main{max-width:1150px;margin:auto;padding:25px 20px 50px}
+.back{
+  display:inline-block;text-decoration:none;color:var(--navy);
+  font-weight:bold;margin-bottom:15px;
+}
+.instruction{
+  background:#fff8f2;border:1px solid #dfb6a5;border-left:6px solid var(--rust);
+  padding:15px 18px;border-radius:8px;margin-bottom:22px;
+}
+.instruction strong{color:var(--rust)}
+.section-heading{margin:28px 0 14px}
+.section-heading small{
+  display:block;color:var(--rust);font-size:12px;font-weight:bold;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.section-heading h2{
+  font-family:Georgia,serif;color:var(--navy);font-size:31px;margin:5px 0;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);overflow:hidden;
+}
+.card-head{
+  background:var(--navy);color:white;padding:15px 16px;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.card-head strong{font-family:Georgia,serif;font-size:21px}
+.badge{
+  background:var(--gold);color:#1f2933;padding:5px 8px;border-radius:999px;
+  font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;
+}
+.card-body{padding:17px}
+.step{
+  background:var(--cream);border-left:4px solid var(--gold);
+  padding:11px 13px;line-height:1.48;margin-bottom:12px;
+}
+.prompt{
+  background:#eef4f7;border-left:4px solid var(--blue);
+  padding:10px 12px;margin-top:12px;
+}
+.challenge{
+  background:#fff4ef;border-left:4px solid var(--rust);
+  padding:10px 12px;margin-top:12px;
+}
+.evidence-table{
+  width:100%;border-collapse:collapse;margin-top:10px;font-size:14px;
+}
+.evidence-table th,.evidence-table td{
+  border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top;
+}
+.evidence-table th{background:#e8edf0;color:var(--navy)}
+.scale{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;
+}
+.scale div{
+  background:#eef2f3;border:1px solid #d4dde1;border-radius:7px;padding:9px;text-align:center;font-size:13px;
+}
+.statement{
+  background:#fffdf8;border:1px solid var(--line);padding:14px;border-radius:8px;line-height:1.55;font-family:Georgia,serif;
+}
+.statement strong{color:var(--navy)}
+.checklist{
+  margin-top:24px;background:#e8eee7;border:1px solid #b8c7b7;border-radius:10px;padding:17px;
+}
+.checklist h2{font-family:Georgia,serif;color:var(--navy);margin-top:0}
+.checklist ul{columns:2;column-gap:30px}
+.taskbox{
+  margin-top:28px;background:var(--darknavy);color:white;border-radius:12px;padding:22px;
+}
+.taskbox h2{font-family:Georgia,serif;margin-top:0}
+.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.task-mini{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  padding:13px;border-radius:8px;
+}
+.next-stage{
+  margin-top:22px;background:#e8eee7;border:1px solid #b8c7b7;
+  border-radius:10px;padding:16px 18px;
+}
+.next-stage a{
+  display:inline-block;margin-top:8px;background:var(--navy);color:white;
+  text-decoration:none;font-weight:bold;padding:9px 12px;border-radius:7px;
+}
+footer{
+  background:#ded8cc;border-top:1px solid var(--line);
+  padding:22px;text-align:center;color:#59626a;font-size:13px;
+}
+@media(max-width:850px){
+  .grid,.task-grid,.scale{grid-template-columns:1fr}
+  .checklist ul{columns:1}
+}
+@media(max-width:600px){header h1{font-size:40px}}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Stage 5 • Build Your Case
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Case Theory Workshop</div>
+<h1>What does the evidence prove?</h1>
+<p>Build one explanation that fits the timeline, witness accounts and law.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a href="evidence.html">Evidence Locker</a>
+<a href="witnesses.html">Witness Statements</a>
+<a href="law.html">Check the Law</a>
+<a class="active" href="build-case.html">Build Your Case</a>
+<a href="final-briefing.html">Final Briefing</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="law.html">← Return to Check the Law</a>
+
+<div class="instruction">
+<strong>CASE TEAM INSTRUCTION:</strong>
+You now have enough information to form a reasoned case theory. Your job is not to make the most dramatic accusation. Your job is to build the explanation that best fits <em>all</em> of the evidence — including evidence that weakens your argument.
+</div>
+
+<div class="section-heading">
+<small>Part A</small>
+<h2>Reconstruct the Events</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>1. Finalise Your Timeline</strong><span class="badge">Sequence</span></div>
+<div class="card-body">
+<div class="step">
+Return to your investigation timeline. Make sure every important event from the Case Brief, Evidence Locker and Witness Statements is included.
+</div>
+
+<table class="evidence-table">
+<tr><th>Key time</th><th>Event to check</th></tr>
+<tr><td>4:47–5:21 pm</td><td>Arrivals at the community centre</td></tr>
+<tr><td>4:58 pm</td><td>Security email received</td></tr>
+<tr><td>About 5:15 pm</td><td>Claire leaves the youth meeting</td></tr>
+<tr><td>5:25–5:45 pm</td><td>Office CCTV recording fault</td></tr>
+<tr><td>5:36 pm</td><td>$18,750 transferred</td></tr>
+<tr><td>5:43–6:18 pm</td><td>Departures and later observations</td></tr>
+</table>
+
+<div class="prompt"><strong>Check:</strong> Which events are confirmed by documents? Which rely mainly on memory?</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>2. Separate Fact from Theory</strong><span class="badge">Reasoning</span></div>
+<div class="card-body">
+
+<div class="step">Before writing your case, sort your notes into four categories.</div>
+
+<div class="scale">
+<div><strong>FACT</strong><br>Directly supported</div>
+<div><strong>CLAIM</strong><br>Someone says it</div>
+<div><strong>INFERENCE</strong><br>Reasonable conclusion</div>
+<div><strong>UNKNOWN</strong><br>Not established</div>
+</div>
+
+<div class="prompt"><strong>Example:</strong> “The transfer occurred at 5:36 pm” is a fact. “Alex made the transfer” is not established by the current evidence.</div>
+
+<div class="challenge"><strong>Challenge:</strong> Find one thing you originally believed that you would now reclassify after seeing more evidence.</div>
+
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part B</small>
+<h2>Test Possible Explanations</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>3. Motive, Means & Opportunity</strong><span class="badge">Analyse</span></div>
+<div class="card-body">
+
+<div class="step">
+For each person you considered important, test whether the case file establishes motive, means and opportunity.
+</div>
+
+<table class="evidence-table">
+<tr>
+<th>Person</th>
+<th>Motive?</th>
+<th>Means / access?</th>
+<th>Opportunity?</th>
+<th>Evidence strength</th>
+</tr>
+<tr>
+<td>Claire Bennett</td><td>?</td><td>?</td><td>?</td><td>?</td>
+</tr>
+<tr>
+<td>Alex Morgan</td><td>?</td><td>?</td><td>?</td><td>?</td>
+</tr>
+<tr>
+<td>Daniel Reed</td><td>?</td><td>?</td><td>?</td><td>?</td>
+</tr>
+<tr>
+<td>Other / unknown person</td><td>?</td><td>?</td><td>?</td><td>?</td>
+</tr>
+</table>
+
+<div class="question challenge"><strong>Important:</strong> Motive, means and opportunity can create suspicion, but they do not automatically prove a crime.</div>
+
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>4. Evidence For and Against</strong><span class="badge">Evaluate</span></div>
+<div class="card-body">
+
+<div class="step">
+Choose your current explanation of events. Then deliberately look for evidence that weakens it.
+</div>
+
+<table class="evidence-table">
+<tr><th>Evidence SUPPORTING my theory</th><th>Evidence WEAKENING my theory</th></tr>
+<tr><td>Exhibit / statement + explanation</td><td>Exhibit / statement + explanation</td></tr>
+<tr><td>Exhibit / statement + explanation</td><td>Exhibit / statement + explanation</td></tr>
+<tr><td>Exhibit / statement + explanation</td><td>Exhibit / statement + explanation</td></tr>
+</table>
+
+<div class="prompt"><strong>Strong reasoning:</strong> A convincing case acknowledges inconvenient evidence rather than pretending it does not exist.</div>
+
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part C</small>
+<h2>Apply the Law</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>5. Theft Test</strong><span class="badge">Legal analysis</span></div>
+<div class="card-body">
+
+<div class="step">
+Use the Check the Law page. Decide whether each element is supported, unsupported or uncertain.
+</div>
+
+<table class="evidence-table">
+<tr><th>Element</th><th>Your conclusion</th><th>Best evidence</th></tr>
+<tr><td>Property belonging to another</td><td></td><td></td></tr>
+<tr><td>Taking / dealing with the property</td><td></td><td></td></tr>
+<tr><td>Dishonesty</td><td></td><td></td></tr>
+<tr><td>Intention to permanently deprive</td><td></td><td></td></tr>
+</table>
+
+<div class="challenge"><strong>Judge it:</strong> Which element is hardest to establish from the current case file? Why?</div>
+
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>6. Justice Check</strong><span class="badge">Civics</span></div>
+<div class="card-body">
+
+<div class="step">
+Consider how the legal system should respond before any person is labelled guilty.
+</div>
+
+<p>Address at least three of these principles:</p>
+
+<ul>
+<li>Rule of law</li>
+<li>Presumption of innocence</li>
+<li>Burden of proof</li>
+<li>Fair trial</li>
+<li>Legal representation</li>
+<li>Independent courts</li>
+</ul>
+
+<div class="prompt"><strong>Question:</strong> What would be unfair about deciding this case from rumours, one witness statement or a newspaper headline?</div>
+
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part D</small>
+<h2>Write Your Case Theory</h2>
+</div>
+
+<section class="card">
+<div class="card-body">
+
+<div class="statement">
+<strong>Your case theory should answer:</strong><br><br>
+
+<strong>WHAT</strong> happened to the $18,750?<br>
+<strong>WHEN</strong> did the key events occur?<br>
+<strong>WHO</strong> was involved in the important actions?<br>
+<strong>WHY</strong> do you believe this explanation best fits the evidence?<br>
+<strong>WHAT EVIDENCE</strong> supports your conclusion?<br>
+<strong>WHAT EVIDENCE</strong> weakens or limits your conclusion?<br>
+<strong>WHAT LAW</strong> applies?<br>
+<strong>WHAT CANNOT YET BE PROVEN?</strong>
+</div>
+
+<div class="prompt">
+<strong>Suggested opening:</strong><br>
+“After examining the documentary evidence, witness statements and relevant Victorian law, our case is that…”
+</div>
+
+<div class="challenge">
+<strong>Higher-level response:</strong> It is acceptable to conclude that the evidence does <em>not</em> prove that a particular person committed an offence. A legal conclusion must follow the evidence, not the desire to identify a culprit.
+</div>
+
+</div>
+</section>
+
+<section class="checklist">
+<h2>Case File Quality Check</h2>
+<p>Before moving to your final presentation, make sure your case:</p>
+<ul>
+<li>uses the timeline accurately</li>
+<li>refers to exhibits by name or letter</li>
+<li>uses at least two witness statements</li>
+<li>distinguishes fact from inference</li>
+<li>explains contradictory evidence</li>
+<li>applies relevant legal principles</li>
+<li>considers presumption of innocence</li>
+<li>identifies what remains uncertain</li>
+<li>does not invent missing evidence</li>
+<li>reaches a clear, evidence-based conclusion</li>
+</ul>
+</section>
+
+<section class="taskbox">
+<h2>Your Case Preparation</h2>
+<p>Complete these three products in your Humanities book or investigation booklet.</p>
+
+<div class="task-grid">
+<div class="task-mini">
+<strong>1. Case Theory</strong>
+<p>Write one clear paragraph explaining your version of events.</p>
+</div>
+<div class="task-mini">
+<strong>2. Evidence List</strong>
+<p>Select your five strongest pieces of evidence and explain what each one proves.</p>
+</div>
+<div class="task-mini">
+<strong>3. Legal Position</strong>
+<p>State whether you believe an offence can currently be proven, and justify your answer.</p>
+</div>
+</div>
+</section>
+
+<section class="next-stage">
+<strong>Next Stage: Final Briefing</strong>
+<p>Your investigation is almost complete. You will now turn your case theory into a lawyer's opening statement and communicate your case through a PowerPoint presentation or an investigative news article.</p>
+<a href="final-briefing.html">Continue to Final Briefing →</a>
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities.
+</footer>
+
+</body>
+</html>
