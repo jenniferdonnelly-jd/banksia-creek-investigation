@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Banksia Creek Investigation | Witness Statements</title>
+
+<style>
+:root{
+  --navy:#20364d;
+  --darknavy:#142638;
+  --gold:#c9a54a;
+  --rust:#a64b2a;
+  --paper:#f4f0e7;
+  --cream:#fbf8f1;
+  --ink:#1c2430;
+  --grey:#66717a;
+  --line:#c8c2b8;
+  --green:#58705a;
+  --blue:#416a88;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+
+.top-strip{
+  background:var(--darknavy);
+  color:#dce5ea;
+  padding:8px 5%;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;
+  border-bottom:6px solid var(--gold);
+}
+
+.header-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:38px 25px 34px;
+}
+
+.case-label{
+  color:#ecdca8;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+header h1{
+  font-family:Georgia,serif;
+  font-size:55px;
+  margin:8px 0 4px;
+}
+
+header p{
+  margin:0;
+  font-size:17px;
+}
+
+nav{
+  background:white;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.nav-inner{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  overflow-x:auto;
+  padding:8px 15px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:bold;
+  padding:10px 13px;
+  border-radius:6px;
+  white-space:nowrap;
+}
+
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:25px 20px 50px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--navy);
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.instruction{
+  background:#fff8f2;
+  border:1px solid #dfb6a5;
+  border-left:6px solid var(--rust);
+  padding:15px 18px;
+  border-radius:8px;
+  margin-bottom:22px;
+}
+
+.instruction strong{color:var(--rust)}
+
+.section-heading{
+  margin:28px 0 14px;
+}
+
+.section-heading small{
+  display:block;
+  color:var(--rust);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  font-family:Georgia,serif;
+  color:var(--navy);
+  font-size:31px;
+  margin:5px 0;
+}
+
+.statement-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.statement{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+  overflow:hidden;
+}
+
+.statement-head{
+  background:var(--navy);
+  color:white;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+
+.person-title strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:22px;
+}
+
+.person-title span{
+  display:block;
+  color:#d6e1e7;
+  font-size:13px;
+  margin-top:4px;
+}
+
+.statement-id{
+  background:var(--gold);
+  color:#1f2933;
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.statement-body{
+  padding:17px;
+}
+
+.statement-text{
+  background:#fffdf8;
+  border-left:4px solid var(--gold);
+  padding:13px 14px;
+  line-height:1.55;
+  font-family:Georgia,serif;
+  font-size:15px;
+}
+
+.meta{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.meta div{
+  background:var(--cream);
+  padding:9px 10px;
+  font-size:13px;
+}
+
+.meta b{
+  display:block;
+  color:var(--grey);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:3px;
+}
+
+details{
+  margin-top:14px;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+  color:var(--navy);
+}
+
+.prompt{
+  margin-top:9px;
+  padding:10px 12px;
+  border-left:4px solid var(--blue);
+  background:#eef4f7;
+}
+
+.challenge{
+  margin-top:9px;
+  padding:10px 12px;
+  border-left:4px solid var(--rust);
+  background:#fff5f1;
+}
+
+.crosscheck{
+  background:#e8eee7;
+  border:1px solid #b8c7b7;
+  padding:12px 14px;
+  border-radius:8px;
+  margin-top:12px;
+  font-size:13px;
+}
+
+.crosscheck strong{color:#3b553b}
+
+.full{
+  grid-column:1 / -1;
+}
+
+.matrix{
+  margin-top:26px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.matrix h2{
+  font-family:Georgia,serif;
+  color:var(--navy);
+  margin-top:0;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  border:1px solid var(--line);
+  padding:10px;
+  text-align:left;
+  vertical-align:top;
+}
+
+th{
+  background:#e8edf0;
+  color:var(--navy);
+}
+
+.taskbox{
+  margin-top:26px;
+  background:var(--darknavy);
+  color:white;
+  border-radius:12px;
+  padding:22px;
+}
+
+.taskbox h2{
+  font-family:Georgia,serif;
+  margin-top:0;
+}
+
+.task-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.task-mini{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;
+  padding:13px;
+}
+
+.next-stage{
+  margin-top:22px;
+  background:#e8eee7;
+  border:1px solid #b8c7b7;
+  border-radius:10px;
+  padding:16px 18px;
+}
+
+.next-stage a{
+  display:inline-block;
+  margin-top:8px;
+  background:var(--navy);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  padding:9px 12px;
+  border-radius:7px;
+}
+
+footer{
+  background:#ded8cc;
+  border-top:1px solid var(--line);
+  padding:22px;
+  text-align:center;
+  color:#59626a;
+  font-size:13px;
+}
+
+@media(max-width:850px){
+  .statement-grid,.task-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+}
+
+@media(max-width:600px){
+  header h1{font-size:40px}
+  .meta{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Stage 3 • Witness Statements
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Witness Statements</div>
+<h1>People remember differently.</h1>
+<p>Read carefully. Compare every claim with the documentary evidence.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a href="evidence.html">Evidence Locker</a>
+<a class="active" href="witnesses.html">Witness Statements</a>
+<a href="law.html">Check the Law</a>
+<a href="build-case.html">Build Your Case</a>
+<a href="final-briefing.html">Final Briefing</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="evidence.html">← Return to Evidence Locker</a>
+
+<div class="instruction">
+<strong>INVESTIGATOR INSTRUCTION:</strong>
+A witness statement is evidence, but it is not automatically a fact. People can remember times incorrectly, make assumptions, misunderstand what they saw, or leave out details. Cross-check every important claim.
+</div>
+
+<div class="section-heading">
+<small>Statement Set 01</small>
+<h2>Witness Accounts</h2>
+</div>
+
+<section class="statement-grid">
+
+<!-- CLAIRE -->
+<article class="statement">
+<div class="statement-head">
+<div class="person-title">
+<strong>Claire Bennett</strong>
+<span>Community Association Treasurer</span>
+</div>
+<span class="statement-id">Statement 1</span>
+</div>
+
+<div class="statement-body">
+
+<div class="statement-text">
+“I arrived before the youth meeting because I had some association paperwork to finish. I remember receiving an email about a security problem with the project account. It looked serious and said action had to be taken before six o’clock.<br><br>
+
+I joined the youth meeting at the beginning, then left at around quarter past five to deal with paperwork in the office. I was worried about the account and I followed what I believed were the bank’s security instructions. I thought I was moving the project money somewhere safe while the bank checked the problem.<br><br>
+
+I did not realise anything was wrong until Monday morning when I checked the account again and the money had not returned. I immediately reported it.”
+</div>
+
+<div class="meta">
+<div><b>Approx. interview time</b>Monday 9:05 am</div>
+<div><b>Key issue</b>Account access / suspicious email</div>
+</div>
+
+<div class="crosscheck">
+<strong>Cross-check with:</strong> Exhibits C, D and E.
+</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="prompt"><strong>Connect it:</strong> Which parts of Claire’s statement are supported by the meeting record and email?</div>
+<div class="challenge"><strong>Judge it:</strong> Does Claire admitting she made a transfer automatically prove theft? What would you still need to know?</div>
+</details>
+
+</div>
+</article>
+
+<!-- ALEX -->
+<article class="statement">
+<div class="statement-head">
+<div class="person-title">
+<strong>Alex Morgan</strong>
+<span>Youth Committee Representative, age 16</span>
+</div>
+<span class="statement-id">Statement 2</span>
+</div>
+
+<div class="statement-body">
+
+<div class="statement-text">
+“I got to the centre a little after five for the youth committee meeting. We were talking about the recreation area and how council delays were making everything harder.<br><br>
+
+I stayed in the meeting room for nearly the whole meeting. I went into the hallway once to get water, but I did not go into the office and I did not use the computer. I remember Councillor Reed coming in while the meeting was still going. He looked annoyed and spoke to Claire near the hall.<br><br>
+
+I left when the meeting finished — about 5:45, I think. Mum was picking me up near the oval. I only heard about the missing money later.”
+</div>
+
+<div class="meta">
+<div><b>Approx. interview time</b>Monday 10:20 am</div>
+<div><b>Key issue</b>Location / access / timing</div>
+</div>
+
+<div class="crosscheck">
+<strong>Cross-check with:</strong> Exhibits B, D and F.
+</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="prompt"><strong>Check it:</strong> Alex says “about 5:45.” CCTV shows 5:48. Is that a serious contradiction? Explain.</div>
+<div class="challenge"><strong>Judge it:</strong> Which parts of Alex’s account are facts, claims or inferences?</div>
+</details>
+
+</div>
+</article>
+
+<!-- DANIEL -->
+<article class="statement">
+<div class="statement-head">
+<div class="person-title">
+<strong>Daniel Reed</strong>
+<span>Local Councillor</span>
+</div>
+<span class="statement-id">Statement 3</span>
+</div>
+
+<div class="statement-body">
+
+<div class="statement-text">
+“I went to the community centre to collect copies of project documents. I have questioned the cost of the recreation project, but that is part of my job as a councillor. Disagreeing with a project is not the same as wanting the money to disappear.<br><br>
+
+I arrived sometime after five-twenty. Claire was busy and I waited near the hall. I spoke with her briefly about the project and then collected the documents I needed.<br><br>
+
+I did not enter the office while I was there. I remember seeing Alex near the hallway at one point, but I cannot say exactly what time it was or where Alex was going. I left before six.”
+</div>
+
+<div class="meta">
+<div><b>Approx. interview time</b>Monday 11:15 am</div>
+<div><b>Key issue</b>Possible motive / location</div>
+</div>
+
+<div class="crosscheck">
+<strong>Cross-check with:</strong> Exhibits B and D.
+</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="prompt"><strong>Question it:</strong> Is Councillor Reed’s opposition to the project evidence of a crime, or only possible motive?</div>
+<div class="challenge"><strong>Reliability:</strong> How useful is the statement “I saw Alex near the hallway” when the witness cannot give a time or destination?</div>
+</details>
+
+</div>
+</article>
+
+<!-- SAM -->
+<article class="statement">
+<div class="statement-head">
+<div class="person-title">
+<strong>Sam Patel</strong>
+<span>Community Centre Cleaner</span>
+</div>
+<span class="statement-id">Statement 4</span>
+</div>
+
+<div class="statement-body">
+
+<div class="statement-text">
+“I started cleaning the storage area and toilets just after five. There were people coming and going because of the youth meeting.<br><br>
+
+At some point after 5:25, I walked past the office doorway and saw someone sitting at the computer. I only saw the person from behind for a moment. I thought it was an adult, but I could not clearly see the face.<br><br>
+
+Later, I saw Claire walk quickly through the hall. She looked worried and was holding her phone. I did not hear what she said. I finished my work and locked the main doors at about 6:18.”
+</div>
+
+<div class="meta">
+<div><b>Approx. interview time</b>Monday 12:05 pm</div>
+<div><b>Key issue</b>Office computer / unidentified person</div>
+</div>
+
+<div class="crosscheck">
+<strong>Cross-check with:</strong> Exhibits A, B and E.
+</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="prompt"><strong>Important:</strong> What did Sam actually observe? What did Sam assume?</div>
+<div class="challenge"><strong>Evaluate:</strong> How much weight should you give this statement when identifying who used the computer?</div>
+</details>
+
+</div>
+</article>
+
+<!-- MIA -->
+<article class="statement full">
+<div class="statement-head">
+<div class="person-title">
+<strong>Mia Tran</strong>
+<span>Youth Committee Member</span>
+</div>
+<span class="statement-id">Statement 5</span>
+</div>
+
+<div class="statement-body">
+
+<div class="statement-text">
+“The youth committee meeting started at about five. Alex was there and was talking a lot about the recreation project. Alex was frustrated about the delays, but definitely wanted the project to go ahead.<br><br>
+
+Claire left the meeting after about fifteen minutes. Later, near the end of the meeting, I went into the hall. I saw Claire coming from the office area looking stressed. I think she said something like, ‘I just need to sort this bank thing out,’ but I cannot remember the exact words.<br><br>
+
+I also remember Councillor Reed being annoyed about the project earlier. Alex left just after the meeting. I sent Alex a message because I realised they had already gone.”
+</div>
+
+<div class="meta">
+<div><b>Approx. interview time</b>Monday 1:30 pm</div>
+<div><b>Key issue</b>Claire’s behaviour / Alex’s timing / project dispute</div>
+</div>
+
+<div class="crosscheck">
+<strong>Cross-check with:</strong> Exhibits B, D, E and F.
+</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="prompt"><strong>Cross-check:</strong> Which parts of Mia’s statement are supported by CCTV and the text messages?</div>
+<div class="challenge"><strong>Reliability:</strong> Mia says Claire “said something like…” Why should an investigator treat the exact wording cautiously?</div>
+</details>
+
+</div>
+</article>
+
+</section>
+
+<section class="matrix">
+<h2>Witness Reliability Matrix</h2>
+<p>Create a table like this in your Humanities book and complete it for all five witnesses.</p>
+
+<table>
+<thead>
+<tr>
+<th>Witness</th>
+<th>What do they claim?</th>
+<th>What evidence supports them?</th>
+<th>What conflicts or remains uncertain?</th>
+<th>How reliable is this part?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claire Bennett</td>
+<td>Received security email and acted on it.</td>
+<td>Exhibit E confirms email.</td>
+<td>Need to establish exactly what action was taken.</td>
+<td>To be evaluated</td>
+</tr>
+<tr>
+<td colspan="5"><em>Continue for Alex, Daniel, Sam and Mia in your book.</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="taskbox">
+<h2>Witness Statement Task</h2>
+<p>Before checking the law, update your theory using both documentary evidence and witness accounts.</p>
+
+<div class="task-grid">
+
+<div class="task-mini">
+<strong>1. Contradictions</strong>
+<p>Identify at least two places where evidence appears to conflict or where a witness is uncertain.</p>
+</div>
+
+<div class="task-mini">
+<strong>2. Strongest Witness</strong>
+<p>Which witness gives the most useful information? Explain using at least two exhibits.</p>
+</div>
+
+<div class="task-mini">
+<strong>3. Revised Theory</strong>
+<p>Write your current explanation of what happened at 5:36 pm. Include evidence for and against your theory.</p>
+</div>
+
+</div>
+</section>
+
+<section class="next-stage">
+<strong>Next Stage: Check the Law</strong>
+<p>You now have evidence and witness accounts. The next question is not simply “What happened?” It is: <strong>Does the evidence establish that any person committed an offence?</strong></p>
+<a href="law.html">Continue to Check the Law →</a>
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities. All characters, organisations and events are fictional.
+</footer>
+
+</body>
+</html>
