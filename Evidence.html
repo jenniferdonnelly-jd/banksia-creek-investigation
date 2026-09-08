@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Banksia Creek Investigation | Evidence Locker</title>
+
+<style>
+:root {
+  --navy:#20364d;
+  --darknavy:#142638;
+  --gold:#c9a54a;
+  --rust:#a64b2a;
+  --paper:#f4f0e7;
+  --cream:#fbf8f1;
+  --ink:#1c2430;
+  --grey:#66717a;
+  --line:#c8c2b8;
+  --green:#58705a;
+  --blue:#416a88;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+
+.top-strip{
+  background:var(--darknavy);
+  color:#dce5ea;
+  padding:8px 5%;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;
+  border-bottom:6px solid var(--gold);
+}
+
+.header-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:38px 25px 34px;
+}
+
+.case-label{
+  color:#ecdca8;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+header h1{
+  font-family:Georgia,serif;
+  font-size:55px;
+  margin:8px 0 4px;
+}
+
+header p{
+  margin:0;
+  font-size:17px;
+}
+
+nav{
+  background:white;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.nav-inner{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  overflow-x:auto;
+  padding:8px 15px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:bold;
+  padding:10px 13px;
+  border-radius:6px;
+  white-space:nowrap;
+}
+
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:25px 20px 50px;
+}
+
+.back{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--navy);
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.instruction{
+  background:#fff8f2;
+  border:1px solid #dfb6a5;
+  border-left:6px solid var(--rust);
+  padding:15px 18px;
+  border-radius:8px;
+  margin-bottom:22px;
+}
+
+.instruction strong{color:var(--rust)}
+
+.section-heading{
+  margin:28px 0 14px;
+}
+
+.section-heading small{
+  display:block;
+  color:var(--rust);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  font-family:Georgia,serif;
+  color:var(--navy);
+  font-size:31px;
+  margin:5px 0;
+}
+
+.exhibit-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.exhibit{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);
+  overflow:hidden;
+}
+
+.exhibit-head{
+  background:var(--navy);
+  color:white;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.exhibit-head strong{
+  font-family:Georgia,serif;
+  font-size:20px;
+}
+
+.exhibit-label{
+  background:var(--gold);
+  color:#1f2933;
+  padding:5px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.exhibit-body{
+  padding:16px;
+}
+
+.exhibit-body p{line-height:1.45}
+
+details{
+  border-top:1px solid var(--line);
+  margin-top:14px;
+  padding-top:12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:bold;
+  color:var(--navy);
+}
+
+.note{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  padding:10px 12px;
+  margin-top:12px;
+}
+
+.find{
+  background:#eef4f7;
+  border-left:4px solid var(--blue);
+  padding:10px 12px;
+  margin-top:12px;
+}
+
+.question{
+  background:#f3efe5;
+  border-left:4px solid var(--rust);
+  padding:10px 12px;
+  margin-top:12px;
+}
+
+/* Floor plan */
+.floorplan{
+  display:grid;
+  grid-template-columns:1.2fr .9fr .9fr;
+  grid-template-rows:90px 90px;
+  gap:6px;
+  background:#263845;
+  padding:6px;
+  margin:12px 0;
+  border-radius:6px;
+}
+
+.room{
+  background:#faf7ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:8px;
+  font-weight:bold;
+  color:var(--navy);
+  position:relative;
+}
+
+.office{grid-row:1 / 3}
+.meeting{grid-column:2 / 4}
+.store{grid-column:2}
+.entry{grid-column:3}
+
+.camera{
+  position:absolute;
+  top:5px;
+  right:6px;
+  font-size:13px;
+  color:var(--rust);
+}
+
+/* CCTV */
+.log{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.log th,.log td{
+  border:1px solid var(--line);
+  padding:8px;
+  text-align:left;
+}
+
+.log th{
+  background:#e8edf0;
+  color:var(--navy);
+}
+
+/* bank */
+.bank{
+  border:1px solid #b7c3ca;
+  background:#f8fbfc;
+  border-radius:8px;
+  padding:14px;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.bank-top{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:2px solid var(--blue);
+  padding-bottom:9px;
+  margin-bottom:10px;
+}
+
+.bank-row{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:6px;
+  padding:8px 0;
+  border-bottom:1px solid #d9e1e5;
+  font-size:13px;
+}
+
+.bank-row.head{font-weight:bold;color:var(--navy)}
+.negative{color:#a12f2f;font-weight:bold}
+
+/* meeting */
+.minutes{
+  border:1px solid #c8c2b8;
+  background:#fffdf7;
+  padding:14px;
+  font-family:Georgia,serif;
+}
+
+.minutes h3{margin:0 0 8px;color:var(--navy)}
+.minutes ul{margin-bottom:0}
+
+/* email */
+.email{
+  border:1px solid #b7bcc0;
+  background:#fff;
+  border-radius:7px;
+  overflow:hidden;
+}
+
+.email-line{
+  padding:8px 10px;
+  border-bottom:1px solid #e1e4e6;
+  font-size:13px;
+}
+
+.email-body{
+  padding:14px;
+  line-height:1.5;
+}
+
+.flag{
+  background:#fff1eb;
+  border:1px solid #e2b49f;
+  color:#8d3e27;
+  padding:8px 10px;
+  border-radius:6px;
+  margin-top:10px;
+  font-size:13px;
+}
+
+/* messages */
+.phone{
+  max-width:360px;
+  margin:8px auto;
+  background:#20282e;
+  border-radius:22px;
+  padding:12px;
+  color:white;
+}
+
+.screen{
+  background:#eef2f3;
+  color:#1c2430;
+  border-radius:14px;
+  padding:12px;
+}
+
+.bubble{
+  max-width:80%;
+  padding:8px 10px;
+  border-radius:12px;
+  margin:8px 0;
+  font-size:13px;
+  line-height:1.35;
+}
+
+.left{background:white}
+.right{background:#cfe4d0;margin-left:auto}
+
+.taskbox{
+  margin-top:28px;
+  background:var(--darknavy);
+  color:white;
+  border-radius:12px;
+  padding:22px;
+}
+
+.taskbox h2{
+  font-family:Georgia,serif;
+  margin-top:0;
+}
+
+.task-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+
+.task-mini{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  padding:13px;
+  border-radius:8px;
+}
+
+footer{
+  background:#ded8cc;
+  border-top:1px solid var(--line);
+  padding:22px;
+  text-align:center;
+  color:#59626a;
+  font-size:13px;
+}
+
+@media(max-width:850px){
+  .exhibit-grid,.task-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  header h1{font-size:40px}
+  .floorplan{grid-template-columns:1fr;grid-template-rows:auto}
+  .office,.meeting,.store,.entry{grid-column:auto;grid-row:auto;min-height:70px}
+  .bank-row{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Stage 2 • Evidence Locker
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Evidence Locker</div>
+<h1>Follow the evidence.</h1>
+<p>Documents do not remember. Records do not guess. But evidence still needs interpretation.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a class="active" href="evidence.html">Evidence Locker</a>
+<a href="witnesses.html">Witness Statements</a>
+<a href="law.html">Check the Law</a>
+<a href="build-case.html">Build Your Case</a>
+<a href="final-briefing.html">Final Briefing</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="case-brief.html">← Return to Case Brief</a>
+
+<div class="instruction">
+<strong>INVESTIGATOR INSTRUCTION:</strong>
+Examine each exhibit separately before deciding how the pieces connect. Add confirmed times to your case timeline and record any questions raised by the evidence.
+</div>
+
+<div class="section-heading">
+<small>Evidence Set 01</small>
+<h2>Documentary Evidence</h2>
+</div>
+
+<section class="exhibit-grid">
+
+<!-- EXHIBIT A -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Community Centre Floor Plan</strong>
+<span class="exhibit-label">Exhibit A</span>
+</div>
+<div class="exhibit-body">
+
+<p>This simplified plan shows the rooms relevant to Friday evening's investigation.</p>
+
+<div class="floorplan">
+<div class="room office">Office<br><small>Computer + filing cabinet</small><span class="camera">CCTV A</span></div>
+<div class="room meeting">Youth Meeting Room</div>
+<div class="room store">Storage / Cleaner Area</div>
+<div class="room entry">Main Entry / Hall<span class="camera">CCTV B</span></div>
+</div>
+
+<div class="note"><strong>Known:</strong> The office computer could access the association's online banking. The office was not locked during the youth meeting.</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="find"><strong>Find it:</strong> Which rooms would a person need to pass through to reach the office?</div>
+<div class="question"><strong>Question it:</strong> Does being near the office prove that a person used the computer? Explain.</div>
+</details>
+
+</div>
+</article>
+
+<!-- EXHIBIT B -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Friday CCTV / Access Log</strong>
+<span class="exhibit-label">Exhibit B</span>
+</div>
+<div class="exhibit-body">
+
+<table class="log">
+<tr><th>Time</th><th>Observation</th></tr>
+<tr><td>4:47 pm</td><td>Claire Bennett enters through the main doors.</td></tr>
+<tr><td>5:03 pm</td><td>Alex Morgan enters.</td></tr>
+<tr><td>5:07 pm</td><td>Mia Tran enters.</td></tr>
+<tr><td>5:21 pm</td><td>Councillor Daniel Reed enters.</td></tr>
+<tr><td>5:43 pm</td><td>Mia Tran leaves the meeting room and walks toward the main hall.</td></tr>
+<tr><td>5:48 pm</td><td>Alex Morgan leaves the building.</td></tr>
+<tr><td>5:54 pm</td><td>Daniel Reed leaves the building.</td></tr>
+<tr><td>6:12 pm</td><td>Claire Bennett leaves.</td></tr>
+<tr><td>6:18 pm</td><td>Sam Patel locks the main entrance.</td></tr>
+</table>
+
+<div class="note"><strong>Important:</strong> CCTV A records the office doorway, but footage from 5:25–5:45 pm is unavailable due to a recording fault.</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="find"><strong>Add to timeline:</strong> Record each confirmed arrival and departure.</div>
+<div class="question"><strong>Connect it:</strong> Who was definitely inside the building at 5:36 pm?</div>
+</details>
+
+</div>
+</article>
+
+<!-- EXHIBIT C -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Bank Transaction Record</strong>
+<span class="exhibit-label">Exhibit C</span>
+</div>
+<div class="exhibit-body">
+
+<div class="bank">
+<div class="bank-top">
+<strong>Banksia Creek Community Association</strong>
+<span>Project Account •••• 7314</span>
+</div>
+
+<div class="bank-row head">
+<div>Date / Time</div><div>Description</div><div>Amount</div><div>Balance</div>
+</div>
+
+<div class="bank-row">
+<div>4 Sep<br>4:10 pm</div><div>Opening balance</div><div>—</div><div>$18,993.16</div>
+</div>
+
+<div class="bank-row">
+<div>4 Sep<br>5:36 pm</div><div>Online transfer<br>Ref: BC RESERVE</div><div class="negative">−$18,750.00</div><div>$243.16</div>
+</div>
+
+<div class="bank-row">
+<div>7 Sep<br>8:03 am</div><div>Balance enquiry</div><div>—</div><div>$243.16</div>
+</div>
+</div>
+
+<div class="note"><strong>Confirmed:</strong> The transfer occurred at <strong>5:36 pm Friday</strong>.</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="find"><strong>Add to timeline:</strong> 5:36 pm — $18,750 electronically transferred.</div>
+<div class="question"><strong>Judge it:</strong> Does this document show who authorised the transfer? What does it prove — and what does it not prove?</div>
+</details>
+
+</div>
+</article>
+
+<!-- EXHIBIT D -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Youth Committee Meeting Record</strong>
+<span class="exhibit-label">Exhibit D</span>
+</div>
+<div class="exhibit-body">
+
+<div class="minutes">
+<h3>Banksia Creek Youth Recreation Committee</h3>
+<p><strong>Friday, 4 September 2026</strong><br>
+Meeting scheduled: 5:00–5:45 pm</p>
+
+<p><strong>Present:</strong> Alex Morgan, Mia Tran, Claire Bennett (first 15 minutes), three other youth committee members.</p>
+
+<ul>
+<li>Discussed equipment ideas for the recreation area.</li>
+<li>Alex raised concerns that council delays could increase building costs.</li>
+<li>Claire left the meeting at approximately 5:15 pm to complete association paperwork.</li>
+<li>Meeting finished at approximately 5:45 pm.</li>
+</ul>
+</div>
+
+<div class="note"><strong>Context:</strong> Alex had publicly supported the project. Councillor Reed had previously questioned whether council should support it.</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="question"><strong>Think:</strong> Does disagreement about the project create motive? Is motive the same as proof?</div>
+</details>
+
+</div>
+</article>
+
+<!-- EXHIBIT E -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Email Received by Treasurer</strong>
+<span class="exhibit-label">Exhibit E</span>
+</div>
+<div class="exhibit-body">
+
+<div class="email">
+<div class="email-line"><strong>From:</strong> CommunityBank Security &lt;security-alert@communitybank-support.net&gt;</div>
+<div class="email-line"><strong>To:</strong> Claire Bennett</div>
+<div class="email-line"><strong>Sent:</strong> Friday, 4 September 2026 — 4:58 pm</div>
+<div class="email-line"><strong>Subject:</strong> URGENT SECURITY ACTION REQUIRED</div>
+
+<div class="email-body">
+<p>Dear Account Holder,</p>
+
+<p>Unusual activity has been detected on your community organisation account.</p>
+
+<p>To prevent loss of project funds, immediately move the balance to the secure reserve account supplied through the security portal. The funds will remain protected while our team completes verification.</p>
+
+<p><strong>Action must be completed before 6:00 pm today.</strong></p>
+
+<p>Failure to act may result in account suspension.</p>
+
+<p>CommunityBank Account Security</p>
+</div>
+</div>
+
+<div class="flag"><strong>Possible warning signs:</strong> unusual sender domain • urgent language • request to move money • generic greeting</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="find"><strong>Add to timeline:</strong> 4:58 pm — suspicious security email received.</div>
+<div class="question"><strong>Connect it:</strong> How could this email change your interpretation of the bank transfer?</div>
+</details>
+
+</div>
+</article>
+
+<!-- EXHIBIT F -->
+<article class="exhibit">
+<div class="exhibit-head">
+<strong>Text Message Extract</strong>
+<span class="exhibit-label">Exhibit F</span>
+</div>
+<div class="exhibit-body">
+
+<p>Extract recovered from a message exchange between Mia Tran and Alex Morgan on Friday evening.</p>
+
+<div class="phone">
+<div class="screen">
+
+<div class="bubble left">
+<strong>Mia — 5:49 pm</strong><br>
+Did you leave already?
+</div>
+
+<div class="bubble right">
+<strong>Alex — 5:50 pm</strong><br>
+Yeah. Heading home. Mum's picking me up near the oval.
+</div>
+
+<div class="bubble left">
+<strong>Mia — 5:51 pm</strong><br>
+Claire looked stressed when she came back past the hall.
+</div>
+
+<div class="bubble right">
+<strong>Alex — 5:52 pm</strong><br>
+Probably more council paperwork lol
+</div>
+
+<div class="bubble left">
+<strong>Mia — 5:53 pm</strong><br>
+Reed was still arguing about the project earlier.
+</div>
+
+</div>
+</div>
+
+<div class="note"><strong>Remember:</strong> A text message may show what somebody believed at the time. It does not automatically prove that belief was correct.</div>
+
+<details>
+<summary>Investigator prompts</summary>
+<div class="question"><strong>Check it:</strong> Which parts of these messages are supported by other exhibits? Which parts are opinion?</div>
+</details>
+
+</div>
+</article>
+
+</section>
+
+<section class="taskbox">
+<h2>Evidence Locker Task</h2>
+<p>Before opening the witness statements, update your investigation notes.</p>
+
+<div class="task-grid">
+
+<div class="task-mini">
+<strong>1. Timeline</strong>
+<p>Add every confirmed time from Exhibits B, C, D, E and F.</p>
+</div>
+
+<div class="task-mini">
+<strong>2. Strongest Evidence</strong>
+<p>Choose the three exhibits you currently think are most important. Explain why.</p>
+</div>
+
+<div class="task-mini">
+<strong>3. Theory Check</strong>
+<p>Rewrite your current theory. What has changed since the Case Brief?</p>
+</div>
+
+</div>
+
+<p><strong>Do not decide guilt yet.</strong> The next stage contains witness statements that may support, challenge or contradict the documentary evidence.</p>
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities. All characters, organisations and events are fictional.
+</footer>
+
+</body>
+</html>
