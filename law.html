@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banksia Creek Investigation | Check the Law</title>
+
+<style>
+:root{
+  --navy:#20364d; --darknavy:#142638; --gold:#c9a54a; --rust:#a64b2a;
+  --paper:#f4f0e7; --cream:#fbf8f1; --ink:#1c2430; --grey:#66717a;
+  --line:#c8c2b8; --green:#58705a; --blue:#416a88; --purple:#715a7a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+.top-strip{
+  background:var(--darknavy);color:#dce5ea;padding:8px 5%;
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+}
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;border-bottom:6px solid var(--gold);
+}
+.header-inner{max-width:1150px;margin:auto;padding:38px 25px 34px}
+.case-label{
+  color:#ecdca8;font-size:13px;letter-spacing:3px;
+  text-transform:uppercase;font-weight:bold;
+}
+header h1{font-family:Georgia,serif;font-size:55px;margin:8px 0 4px}
+header p{margin:0;font-size:17px}
+nav{
+  background:white;border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:1150px;margin:auto;display:flex;overflow-x:auto;padding:8px 15px;
+}
+nav a{
+  text-decoration:none;color:var(--navy);font-size:14px;font-weight:bold;
+  padding:10px 13px;border-radius:6px;white-space:nowrap;
+}
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+main{max-width:1150px;margin:auto;padding:25px 20px 50px}
+.back{
+  display:inline-block;text-decoration:none;color:var(--navy);
+  font-weight:bold;margin-bottom:15px;
+}
+.instruction{
+  background:#fff8f2;border:1px solid #dfb6a5;border-left:6px solid var(--rust);
+  padding:15px 18px;border-radius:8px;margin-bottom:22px;
+}
+.instruction strong{color:var(--rust)}
+.disclaimer{
+  background:#eef4f7;border:1px solid #c7d6df;border-left:5px solid var(--blue);
+  padding:13px 15px;border-radius:8px;margin-bottom:24px;font-size:14px;
+}
+.section-heading{margin:28px 0 14px}
+.section-heading small{
+  display:block;color:var(--rust);font-size:12px;font-weight:bold;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.section-heading h2{
+  font-family:Georgia,serif;color:var(--navy);font-size:31px;margin:5px 0;
+}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);overflow:hidden;
+}
+.card-head{
+  background:var(--navy);color:white;padding:15px 16px;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.card-head strong{font-family:Georgia,serif;font-size:21px}
+.badge{
+  background:var(--gold);color:#1f2933;padding:5px 8px;border-radius:999px;
+  font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;
+}
+.card-body{padding:17px}
+.simple{
+  background:var(--cream);border-left:4px solid var(--gold);
+  padding:11px 13px;line-height:1.48;margin-bottom:12px;
+}
+.law-test{
+  background:#f5f8f9;border:1px solid #d7e0e4;border-radius:8px;padding:12px;
+}
+.law-test strong{color:var(--navy)}
+.law-test ul{margin-bottom:0}
+.case-link{
+  background:#e8eee7;border-left:4px solid var(--green);
+  padding:10px 12px;margin-top:12px;
+}
+.question{
+  background:#fff4ef;border-left:4px solid var(--rust);
+  padding:10px 12px;margin-top:12px;
+}
+.highlight{
+  color:var(--rust);font-weight:bold;
+}
+.court{
+  display:flex;flex-direction:column;gap:8px;margin-top:12px;
+}
+.court div{
+  background:#eef2f4;border:1px solid #d2dbe0;border-radius:7px;
+  padding:9px 12px;text-align:center;font-weight:bold;color:var(--navy);
+}
+.arrow{text-align:center!important;background:transparent!important;border:0!important;padding:0!important}
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;
+}
+.compare-box{
+  border:1px solid var(--line);border-radius:8px;padding:12px;background:#fffdf8;
+}
+.compare-box h3{margin:.1rem 0 .5rem;color:var(--navy)}
+.taskbox{
+  margin-top:28px;background:var(--darknavy);color:white;border-radius:12px;padding:22px;
+}
+.taskbox h2{font-family:Georgia,serif;margin-top:0}
+.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.task-mini{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  padding:13px;border-radius:8px;
+}
+.sources{
+  margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;
+}
+.sources h2{font-family:Georgia,serif;color:var(--navy);margin-top:0}
+.sources a{color:var(--blue)}
+.next-stage{
+  margin-top:22px;background:#e8eee7;border:1px solid #b8c7b7;
+  border-radius:10px;padding:16px 18px;
+}
+.next-stage a{
+  display:inline-block;margin-top:8px;background:var(--navy);color:white;
+  text-decoration:none;font-weight:bold;padding:9px 12px;border-radius:7px;
+}
+footer{
+  background:#ded8cc;border-top:1px solid var(--line);
+  padding:22px;text-align:center;color:#59626a;font-size:13px;
+}
+@media(max-width:850px){.grid,.task-grid,.compare{grid-template-columns:1fr}}
+@media(max-width:600px){header h1{font-size:40px}}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Stage 4 • Check the Law
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Legal Reference File</div>
+<h1>What does the law require?</h1>
+<p>Separate suspicion from proof. Apply the law to the evidence you actually have.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a href="evidence.html">Evidence Locker</a>
+<a href="witnesses.html">Witness Statements</a>
+<a class="active" href="law.html">Check the Law</a>
+<a href="build-case.html">Build Your Case</a>
+<a href="final-briefing.html">Final Briefing</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="witnesses.html">← Return to Witness Statements</a>
+
+<div class="instruction">
+<strong>LEGAL TEAM INSTRUCTION:</strong>
+Your job is not to decide who seems suspicious. Your job is to decide what the evidence could actually prove under Victorian law and the principles of Australia's legal system.
+</div>
+
+<div class="disclaimer">
+<strong>Classroom legal guide:</strong> The explanations below are simplified for Year 7/8 Humanities. They are based on Victorian legal principles and are designed for this fictional case study, not as personal legal advice.
+</div>
+
+<div class="section-heading">
+<small>Part A</small>
+<h2>Principles of Justice</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>Rule of Law</strong><span class="badge">Principle 1</span></div>
+<div class="card-body">
+<div class="simple">
+Everyone — including citizens, police, politicians and government officials — is subject to the law. Laws should be applied fairly and consistently.
+</div>
+<div class="case-link">
+<strong>Apply it to Banksia Creek:</strong> Alex, Claire and Councillor Reed must all be treated according to the same legal process, regardless of age, job or public position.
+</div>
+<div class="question"><strong>Ask:</strong> Has anyone been treated as guilty before the evidence was properly tested?</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Presumption of Innocence</strong><span class="badge">Principle 2</span></div>
+<div class="card-body">
+<div class="simple">
+A person accused of a criminal offence is treated as innocent unless and until guilt is established according to law.
+</div>
+<div class="case-link">
+<strong>Apply it:</strong> Being present at the community centre, being mentioned by a witness or being criticised in the media does not prove a person committed an offence.
+</div>
+<div class="question"><strong>Ask:</strong> Which pieces of evidence create suspicion, and which actually establish a fact?</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Burden of Proof</strong><span class="badge">Principle 3</span></div>
+<div class="card-body">
+<div class="simple">
+In a criminal case, the prosecution has the responsibility of proving the charge. The accused does not have to prove that they are innocent.
+</div>
+<div class="law-test">
+<strong>Criminal standard:</strong> the prosecution must prove guilt <span class="highlight">beyond reasonable doubt</span>.
+</div>
+<div class="question"><strong>Ask:</strong> If important questions remain unanswered, could guilt be established beyond reasonable doubt?</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Fair Trial & Legal Representation</strong><span class="badge">Principle 4</span></div>
+<div class="card-body">
+<div class="simple">
+A fair legal process requires an independent court, proper procedures, an opportunity for evidence to be tested, and the ability of an accused person to obtain legal advice or representation.
+</div>
+<div class="case-link">
+<strong>Apply it:</strong> A newspaper headline, social-media rumour or community opinion cannot replace the court process.
+</div>
+<div class="question"><strong>Ask:</strong> Why is an independent court more reliable than deciding guilt through public opinion?</div>
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part B</small>
+<h2>Possible Victorian Offences</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>Theft</strong><span class="badge">Crimes Act 1958 (Vic)</span></div>
+<div class="card-body">
+
+<div class="simple">
+For this investigation, focus on four key ideas. Theft involves taking or dealing with property belonging to another <strong>dishonestly</strong> and with an <strong>intention to permanently deprive</strong> the owner of it.
+</div>
+
+<div class="law-test">
+<strong>Ask four questions:</strong>
+<ul>
+<li>Was there property belonging to another person or organisation?</li>
+<li>Did someone take or deal with that property?</li>
+<li>Was the conduct dishonest?</li>
+<li>Did the person intend that the owner would permanently lose the property?</li>
+</ul>
+</div>
+
+<div class="case-link">
+<strong>Banksia Creek:</strong> The $18,750 is property. But if a person genuinely believed they were temporarily moving it to protect the account, the issue of dishonesty and intention becomes very important.
+</div>
+
+<div class="question">
+<strong>Your task:</strong> Which elements could the current evidence support? Which elements are still uncertain?
+</div>
+
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Obtaining Property by Deception</strong><span class="badge">Crimes Act 1958 (Vic)</span></div>
+<div class="card-body">
+
+<div class="simple">
+Victorian law also deals with situations where a person uses <strong>deception</strong> and <strong>dishonesty</strong> to obtain property belonging to another.
+</div>
+
+<div class="law-test">
+<strong>Think about:</strong>
+<ul>
+<li>Was somebody deliberately or recklessly deceptive?</li>
+<li>Did that deception cause property to come under somebody else's control?</li>
+<li>Was the conduct dishonest?</li>
+<li>Was there an intention to permanently deprive the owner of the property?</li>
+</ul>
+</div>
+
+<div class="case-link">
+<strong>Banksia Creek:</strong> Exhibit E may suggest that the person who created the fake security email is more legally significant than somebody who was merely present at the community centre.
+</div>
+
+<div class="question">
+<strong>Important:</strong> Do you have enough evidence to identify the sender of the email? Do not invent evidence that is not in the case file.
+</div>
+
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part C</small>
+<h2>Where Would a Case Go?</h2>
+</div>
+
+<section class="card">
+<div class="card-body">
+<p>Victoria has a hierarchy of courts. The level of court depends on the type and seriousness of the matter and the way the case proceeds.</p>
+
+<div class="court">
+<div>High Court of Australia</div>
+<div class="arrow">↑</div>
+<div>Supreme Court of Victoria</div>
+<div class="arrow">↑</div>
+<div>County Court of Victoria</div>
+<div class="arrow">↑</div>
+<div>Magistrates' Court of Victoria</div>
+</div>
+
+<div class="compare">
+<div class="compare-box">
+<h3>Magistrates' Court</h3>
+<p>The first level of the Victorian court system. It hears all summary offences, some indictable offences and conducts committal proceedings for some more serious matters.</p>
+</div>
+
+<div class="compare-box">
+<h3>Higher Courts</h3>
+<p>More serious criminal matters may proceed to the County Court or Supreme Court. The High Court of Australia sits at the top of the Australian court hierarchy.</p>
+</div>
+</div>
+
+<div class="question">
+<strong>Think:</strong> Why should elected politicians not be able to tell a magistrate or judge what verdict to reach?
+</div>
+</div>
+</section>
+
+<div class="section-heading">
+<small>Part D</small>
+<h2>Parliament and Courts Make Law Differently</h2>
+</div>
+
+<section class="card">
+<div class="card-body">
+
+<div class="compare">
+
+<div class="compare-box">
+<h3>Parliament → Statutory Law</h3>
+<p>Parliament debates and passes legislation. An Act of Parliament sets legal rules that courts apply.</p>
+<p><strong>Example:</strong> The Victorian Crimes Act contains offences including theft and obtaining property by deception.</p>
+</div>
+
+<div class="compare-box">
+<h3>Courts → Common Law / Precedent</h3>
+<p>Courts interpret legislation and decide cases. Decisions made by higher courts can create precedents that guide or bind lower courts in later cases with similar legal issues.</p>
+<p><strong>Why it matters:</strong> Courts sometimes need to decide what words in legislation mean when applying them to real situations.</p>
+</div>
+
+</div>
+
+<div class="question">
+<strong>Apply your previous learning:</strong> If the meaning of a word in a law was unclear in the Banksia Creek case, what role could a court play?
+</div>
+
+</div>
+</section>
+
+<section class="taskbox">
+<h2>Legal Analysis Task</h2>
+<p>Now test your current case theory against the law.</p>
+
+<div class="task-grid">
+
+<div class="task-mini">
+<strong>1. Theft Test</strong>
+<p>For each element of theft, write: <em>supported, unsupported or uncertain</em>. Cite evidence.</p>
+</div>
+
+<div class="task-mini">
+<strong>2. Justice Check</strong>
+<p>Explain how presumption of innocence and burden of proof should affect the way Alex is treated.</p>
+</div>
+
+<div class="task-mini">
+<strong>3. Legal Conclusion</strong>
+<p>What can you currently establish? What would you still need to prove before accusing any person of an offence?</p>
+</div>
+
+</div>
+</section>
+
+<section class="sources">
+<h2>Official reference points</h2>
+<p>This classroom guide was checked against Victorian legal and court information. Students do not need to read the full legislation unless directed by their teacher.</p>
+<ul>
+<li><a href="https://www.mcv.vic.gov.au/court-system" target="_blank" rel="noopener">Magistrates' Court of Victoria — The court system</a></li>
+<li><a href="https://www.mcv.vic.gov.au/criminal-matters" target="_blank" rel="noopener">Magistrates' Court of Victoria — Criminal matters</a></li>
+<li><a href="https://classic.austlii.edu.au/au/legis/vic/consol_act/ca195882/s72.html" target="_blank" rel="noopener">Crimes Act 1958 (Vic) — s 72 Basic definition of theft</a></li>
+<li><a href="https://classic.austlii.edu.au/au/legis/vic/consol_act/ca195882/s81.html" target="_blank" rel="noopener">Crimes Act 1958 (Vic) — s 81 Obtaining property by deception</a></li>
+</ul>
+</section>
+
+<section class="next-stage">
+<strong>Next Stage: Build Your Case</strong>
+<p>You have now examined the documents, witness statements and relevant law. Your next job is to decide which explanation best fits <em>all</em> of the evidence — including evidence that weakens your theory.</p>
+<a href="build-case.html">Continue to Build Your Case →</a>
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities. The legal summaries are simplified for classroom use.
+</footer>
+
+</body>
+</html>
