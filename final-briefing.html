@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banksia Creek Investigation | Final Briefing</title>
+
+<style>
+:root{
+  --navy:#20364d; --darknavy:#142638; --gold:#c9a54a; --rust:#a64b2a;
+  --paper:#f4f0e7; --cream:#fbf8f1; --ink:#1c2430; --grey:#66717a;
+  --line:#c8c2b8; --green:#58705a; --blue:#416a88;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+.top-strip{
+  background:var(--darknavy);color:#dce5ea;padding:8px 5%;
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+}
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;border-bottom:6px solid var(--gold);
+}
+.header-inner{max-width:1150px;margin:auto;padding:38px 25px 34px}
+.case-label{
+  color:#ecdca8;font-size:13px;letter-spacing:3px;
+  text-transform:uppercase;font-weight:bold;
+}
+header h1{font-family:Georgia,serif;font-size:55px;margin:8px 0 4px}
+header p{margin:0;font-size:17px}
+nav{
+  background:white;border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:1150px;margin:auto;display:flex;overflow-x:auto;padding:8px 15px;
+}
+nav a{
+  text-decoration:none;color:var(--navy);font-size:14px;font-weight:bold;
+  padding:10px 13px;border-radius:6px;white-space:nowrap;
+}
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+main{max-width:1150px;margin:auto;padding:25px 20px 50px}
+.back{
+  display:inline-block;text-decoration:none;color:var(--navy);
+  font-weight:bold;margin-bottom:15px;
+}
+.instruction{
+  background:#fff8f2;border:1px solid #dfb6a5;border-left:6px solid var(--rust);
+  padding:15px 18px;border-radius:8px;margin-bottom:22px;
+}
+.instruction strong{color:var(--rust)}
+.section-heading{margin:28px 0 14px}
+.section-heading small{
+  display:block;color:var(--rust);font-size:12px;font-weight:bold;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.section-heading h2{
+  font-family:Georgia,serif;color:var(--navy);font-size:31px;margin:5px 0;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);overflow:hidden;
+}
+.card-head{
+  background:var(--navy);color:white;padding:15px 16px;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.card-head strong{font-family:Georgia,serif;font-size:21px}
+.badge{
+  background:var(--gold);color:#1f2933;padding:5px 8px;border-radius:999px;
+  font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;
+}
+.card-body{padding:17px}
+.step{
+  background:var(--cream);border-left:4px solid var(--gold);
+  padding:11px 13px;line-height:1.48;margin-bottom:12px;
+}
+.statement{
+  background:#fffdf8;border:1px solid var(--line);
+  border-left:5px solid var(--gold);padding:15px;border-radius:8px;
+  font-family:Georgia,serif;line-height:1.6;
+}
+.prompt{
+  background:#eef4f7;border-left:4px solid var(--blue);
+  padding:10px 12px;margin-top:12px;
+}
+.challenge{
+  background:#fff4ef;border-left:4px solid var(--rust);
+  padding:10px 12px;margin-top:12px;
+}
+.requirements{
+  width:100%;border-collapse:collapse;margin-top:10px;font-size:14px;
+}
+.requirements th,.requirements td{
+  border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top;
+}
+.requirements th{background:#e8edf0;color:var(--navy)}
+.option{
+  border:2px solid #d5d0c7;
+  border-radius:10px;
+  padding:15px;
+  background:#fffdf8;
+}
+.option h3{
+  color:var(--navy);font-family:Georgia,serif;margin:.1rem 0 .6rem;
+}
+.option ul{margin-bottom:0}
+.checklist{
+  margin-top:24px;background:#e8eee7;border:1px solid #b8c7b7;
+  border-radius:10px;padding:17px;
+}
+.checklist h2{font-family:Georgia,serif;color:var(--navy);margin-top:0}
+.checklist ul{columns:2;column-gap:30px}
+.rubric{
+  margin-top:24px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:18px;
+}
+.rubric h2{font-family:Georgia,serif;color:var(--navy);margin-top:0}
+.taskbox{
+  margin-top:28px;background:var(--darknavy);color:white;border-radius:12px;padding:22px;
+}
+.taskbox h2{font-family:Georgia,serif;margin-top:0}
+.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.task-mini{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  padding:13px;border-radius:8px;
+}
+.final-note{
+  margin-top:22px;background:#fff8f2;border:1px solid #dfb6a5;
+  border-radius:10px;padding:16px 18px;
+}
+footer{
+  background:#ded8cc;border-top:1px solid var(--line);
+  padding:22px;text-align:center;color:#59626a;font-size:13px;
+}
+@media(max-width:850px){
+  .grid,.task-grid{grid-template-columns:1fr}
+  .checklist ul{columns:1}
+}
+@media(max-width:600px){header h1{font-size:40px}}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Stage 6 • Final Briefing
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Final Briefing</div>
+<h1>Present your case.</h1>
+<p>Use evidence. Apply the law. Communicate clearly.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a href="evidence.html">Evidence Locker</a>
+<a href="witnesses.html">Witness Statements</a>
+<a href="law.html">Check the Law</a>
+<a href="build-case.html">Build Your Case</a>
+<a class="active" href="final-briefing.html">Final Briefing</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="build-case.html">← Return to Build Your Case</a>
+
+<div class="instruction">
+<strong>FINAL TASK:</strong>
+You have completed the investigation. Your job now is to communicate your case as a legal team. Your conclusion must be based on evidence — not on who you personally think is suspicious.
+</div>
+
+<div class="section-heading">
+<small>Part A</small>
+<h2>Your Lawyer's Opening Statement</h2>
+</div>
+
+<section class="card">
+<div class="card-body">
+
+<div class="step">
+An opening statement explains the case your legal team believes the evidence will support. It should be clear, factual and persuasive, without exaggerating what the evidence can prove.
+</div>
+
+<div class="statement">
+<strong>Suggested structure:</strong><br><br>
+
+“Members of the court,<br><br>
+
+The evidence in this case will show that …<br><br>
+
+On Friday, 4 September 2026 …<br><br>
+
+You will hear evidence from …<br><br>
+
+Exhibit ___ demonstrates …<br><br>
+
+The relevant law requires …<br><br>
+
+Our case is that …<br><br>
+
+However, we also acknowledge that …<br><br>
+
+At the conclusion of this case, we will ask you to find that …”
+</div>
+
+<div class="prompt">
+<strong>Evidence requirement:</strong> Your opening statement must refer to at least <strong>three documentary exhibits</strong> and <strong>two witness statements</strong>.
+</div>
+
+<div class="challenge">
+<strong>Higher-level response:</strong> Include one piece of evidence that weakens your argument and explain why you do not think it changes your overall conclusion.
+</div>
+
+</div>
+</section>
+
+<div class="section-heading">
+<small>Part B</small>
+<h2>Choose Your Final Product</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head">
+<strong>Option 1 — Lawyer's Case Presentation</strong>
+<span class="badge">PowerPoint</span>
+</div>
+<div class="card-body">
+
+<div class="step">
+Create a short PowerPoint that presents your case to the class as if you were a legal team briefing the court.
+</div>
+
+<table class="requirements">
+<tr><th>Slide</th><th>What to include</th></tr>
+<tr><td>1</td><td><strong>The Case:</strong> case title, issue and your main conclusion.</td></tr>
+<tr><td>2</td><td><strong>Timeline:</strong> the key events in chronological order.</td></tr>
+<tr><td>3</td><td><strong>Key Evidence:</strong> your strongest exhibits and witness statements.</td></tr>
+<tr><td>4</td><td><strong>The Law:</strong> the legal principles and offence you applied.</td></tr>
+<tr><td>5</td><td><strong>Our Case:</strong> your final argument and what remains uncertain.</td></tr>
+</table>
+
+<div class="prompt">
+<strong>Presentation length:</strong> approximately 3–5 minutes.
+</div>
+
+</div>
+</article>
+
+<article class="card">
+<div class="card-head">
+<strong>Option 2 — Investigative News Article</strong>
+<span class="badge">News Report</span>
+</div>
+<div class="card-body">
+
+<div class="step">
+Write a front-page investigative article that explains the case accurately and fairly.
+</div>
+
+<div class="option">
+<h3>Your article must include:</h3>
+<ul>
+<li>a clear headline</li>
+<li>a factual summary of the case</li>
+<li>a short timeline</li>
+<li>evidence from at least three exhibits</li>
+<li>information from at least two witnesses</li>
+<li>the relevant law</li>
+<li>what is proven and what remains uncertain</li>
+<li>a careful final conclusion</li>
+</ul>
+</div>
+
+<div class="challenge">
+<strong>Media challenge:</strong> Avoid writing that a person is “guilty” unless the evidence and legal process actually establish that. Think about presumption of innocence.
+</div>
+
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Part C</small>
+<h2>What Your Final Case Must Demonstrate</h2>
+</div>
+
+<section class="checklist">
+<h2>Final Case Checklist</h2>
+<ul>
+<li>accurate timeline</li>
+<li>clear case theory</li>
+<li>at least three documentary exhibits</li>
+<li>at least two witness statements</li>
+<li>fact distinguished from inference</li>
+<li>contradictory evidence considered</li>
+<li>Victorian law applied correctly</li>
+<li>rule of law explained</li>
+<li>presumption of innocence considered</li>
+<li>burden of proof considered</li>
+<li>what remains uncertain identified</li>
+<li>clear and persuasive communication</li>
+</ul>
+</section>
+
+<section class="rubric">
+<h2>What You Are Being Assessed On</h2>
+
+<table class="requirements">
+<tr>
+<th>Assessment area</th>
+<th>What strong work shows</th>
+</tr>
+<tr>
+<td><strong>Investigating & analysing</strong></td>
+<td>Uses the timeline, documents and witness statements accurately and identifies important contradictions.</td>
+</tr>
+<tr>
+<td><strong>Evaluating evidence</strong></td>
+<td>Explains the strength and limitations of evidence rather than simply listing it.</td>
+</tr>
+<tr>
+<td><strong>Laws & citizens</strong></td>
+<td>Applies relevant Victorian law and principles such as rule of law, presumption of innocence and burden of proof.</td>
+</tr>
+<tr>
+<td><strong>Democratic institutions</strong></td>
+<td>Explains why courts, due process and an independent legal system matter.</td>
+</tr>
+<tr>
+<td><strong>Communicating</strong></td>
+<td>Presents a clear, logical and evidence-based case suited to the chosen format.</td>
+</tr>
+</table>
+</section>
+
+<section class="taskbox">
+<h2>Before You Submit</h2>
+
+<div class="task-grid">
+
+<div class="task-mini">
+<strong>1. Evidence Check</strong>
+<p>Can every major claim in your final case be traced back to an exhibit or witness statement?</p>
+</div>
+
+<div class="task-mini">
+<strong>2. Fairness Check</strong>
+<p>Have you avoided treating suspicion, rumours or opinions as proof?</p>
+</div>
+
+<div class="task-mini">
+<strong>3. Communication Check</strong>
+<p>Could someone who has never seen the case file understand your argument?</p>
+</div>
+
+</div>
+</section>
+
+<section class="final-note">
+<strong>Do not open any final reveal until instructed by your teacher.</strong>
+Your assessment is based on how well you investigate, evaluate evidence, apply the law and communicate your case — not on whether your first guess matches the final explanation.
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities.
+</footer>
+
+</body>
+</html>
