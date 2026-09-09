@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banksia Creek Investigation | Court Proceedings & Final Solution</title>
+
+<style>
+:root{
+  --navy:#20364d; --darknavy:#142638; --gold:#c9a54a; --rust:#a64b2a;
+  --paper:#f4f0e7; --cream:#fbf8f1; --ink:#1c2430; --grey:#66717a;
+  --line:#c8c2b8; --green:#58705a; --blue:#416a88; --red:#8d3b2b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
+  background:
+    linear-gradient(rgba(244,240,231,.96),rgba(244,240,231,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(0,0,0,.03) 32px);
+}
+.top-strip{
+  background:var(--darknavy);color:#dce5ea;padding:8px 5%;
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+}
+header{
+  background:linear-gradient(120deg,var(--navy),#31546a);
+  color:white;border-bottom:6px solid var(--gold);
+}
+.header-inner{max-width:1150px;margin:auto;padding:38px 25px 34px}
+.case-label{
+  color:#ecdca8;font-size:13px;letter-spacing:3px;
+  text-transform:uppercase;font-weight:bold;
+}
+header h1{font-family:Georgia,serif;font-size:55px;margin:8px 0 4px}
+header p{margin:0;font-size:17px}
+nav{
+  background:white;border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:1150px;margin:auto;display:flex;overflow-x:auto;padding:8px 15px;
+}
+nav a{
+  text-decoration:none;color:var(--navy);font-size:14px;font-weight:bold;
+  padding:10px 13px;border-radius:6px;white-space:nowrap;
+}
+nav a:hover{background:#edf1f2}
+nav a.active{background:var(--navy);color:white}
+main{max-width:1150px;margin:auto;padding:25px 20px 50px}
+.back{
+  display:inline-block;text-decoration:none;color:var(--navy);
+  font-weight:bold;margin-bottom:15px;
+}
+.sealed{
+  background:#fff7ef;border:2px solid #d8a68f;border-left:8px solid var(--rust);
+  border-radius:10px;padding:18px 20px;margin-bottom:22px;
+}
+.sealed strong{color:var(--rust)}
+.section-heading{margin:28px 0 14px}
+.section-heading small{
+  display:block;color:var(--rust);font-size:12px;font-weight:bold;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.section-heading h2{
+  font-family:Georgia,serif;color:var(--navy);font-size:31px;margin:5px 0;
+}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);overflow:hidden;
+}
+.card-head{
+  background:var(--navy);color:white;padding:15px 16px;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.card-head strong{font-family:Georgia,serif;font-size:21px}
+.badge{
+  background:var(--gold);color:#1f2933;padding:5px 8px;border-radius:999px;
+  font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;
+}
+.card-body{padding:17px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.timeline{
+  width:100%;border-collapse:collapse;font-size:14px;
+}
+.timeline th,.timeline td{
+  border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;
+}
+.timeline th{background:#e8edf0;color:var(--navy)}
+.fact{
+  background:var(--cream);border-left:4px solid var(--gold);
+  padding:11px 13px;margin-top:10px;line-height:1.5;
+}
+.conclusion{
+  background:#e8eee7;border-left:5px solid var(--green);
+  padding:12px 14px;margin-top:12px;line-height:1.5;
+}
+.warning{
+  background:#fff4ef;border-left:5px solid var(--rust);
+  padding:12px 14px;margin-top:12px;line-height:1.5;
+}
+.court-stage{
+  background:#fffdf8;border:1px solid var(--line);border-radius:9px;
+  padding:14px;margin-top:12px;
+}
+.court-stage h3{color:var(--navy);margin:.1rem 0 .5rem}
+.script{
+  background:#f7f4ed;border-left:4px solid var(--gold);
+  padding:12px 14px;margin-top:10px;font-family:Georgia,serif;line-height:1.55;
+}
+.verdict{
+  margin-top:24px;background:var(--darknavy);color:white;border-radius:12px;padding:22px;
+}
+.verdict h2{font-family:Georgia,serif;margin-top:0}
+.verdict-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.verdict-item{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  padding:14px;border-radius:8px;
+}
+.reflection{
+  margin-top:24px;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:18px;
+}
+.reflection h2{font-family:Georgia,serif;color:var(--navy);margin-top:0}
+footer{
+  background:#ded8cc;border-top:1px solid var(--line);
+  padding:22px;text-align:center;color:#59626a;font-size:13px;
+}
+@media(max-width:850px){.grid,.verdict-grid{grid-template-columns:1fr}}
+@media(max-width:600px){header h1{font-size:40px}}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip">
+Banksia Creek Case File 26-417 • Court Proceedings • Final Solution
+</div>
+
+<header>
+<div class="header-inner">
+<div class="case-label">Teacher-Released Final Stage</div>
+<h1>Case closed?</h1>
+<p>Test the class theories against the final evidence and legal conclusions.</p>
+</div>
+</header>
+
+<nav>
+<div class="nav-inner">
+<a href="index.html">Home</a>
+<a href="case-brief.html">Case Brief</a>
+<a href="evidence.html">Evidence Locker</a>
+<a href="witnesses.html">Witness Statements</a>
+<a href="law.html">Check the Law</a>
+<a href="build-case.html">Build Your Case</a>
+<a href="final-briefing.html">Final Briefing</a>
+<a class="active" href="court-proceedings.html">Court Proceedings</a>
+</div>
+</nav>
+
+<main>
+
+<a class="back" href="final-briefing.html">← Return to Final Briefing</a>
+
+<div class="sealed">
+<strong>TEACHER RELEASE ONLY:</strong>
+Students should complete and submit their own case theory before this page is opened. The purpose of the final stage is to compare their reasoning with the complete evidence — not to reward guessing the “right” person.
+</div>
+
+<div class="section-heading">
+<small>Final Evidence</small>
+<h2>What actually happened?</h2>
+</div>
+
+<section class="card">
+<div class="card-head"><strong>Confirmed Sequence of Events</strong><span class="badge">Final Record</span></div>
+<div class="card-body">
+
+<table class="timeline">
+<tr><th>Time</th><th>Confirmed event</th></tr>
+<tr><td>4:47 pm</td><td>Claire Bennett arrived at the community centre.</td></tr>
+<tr><td>4:58 pm</td><td>Claire received the fraudulent “CommunityBank Security” email.</td></tr>
+<tr><td>5:03–5:21 pm</td><td>Alex, Mia and Councillor Reed arrived for separate reasons.</td></tr>
+<tr><td>About 5:15 pm</td><td>Claire left the youth meeting and returned to the office.</td></tr>
+<tr><td>5:25–5:45 pm</td><td>The office CCTV recording was unavailable due to a fault.</td></tr>
+<tr><td>5:36 pm</td><td>Claire used the office computer to transfer $18,750 to the account identified in the fraudulent email.</td></tr>
+<tr><td>5:48 pm</td><td>Alex left the centre.</td></tr>
+<tr><td>5:54 pm</td><td>Councillor Reed left the centre.</td></tr>
+<tr><td>6:12 pm</td><td>Claire left the centre.</td></tr>
+<tr><td>Monday 8:12 am</td><td>Claire discovered the money had not returned and reported the missing funds.</td></tr>
+</table>
+
+<div class="fact">
+<strong>Final banking information:</strong> The destination account was linked to a fraudulent operation. The sender of the email used deception to cause the transfer.
+</div>
+
+<div class="fact">
+<strong>Final device information:</strong> The online banking session at 5:36 pm was accessed using Claire Bennett’s authorised credentials on the office computer.
+</div>
+
+</div>
+</section>
+
+<div class="section-heading">
+<small>Legal Analysis</small>
+<h2>Who committed an offence?</h2>
+</div>
+
+<section class="grid">
+
+<article class="card">
+<div class="card-head"><strong>Claire Bennett</strong><span class="badge">Treasurer</span></div>
+<div class="card-body">
+<div class="fact">
+Claire physically completed the transfer, but the evidence shows she believed she was moving the money to protect it after receiving what she thought was a genuine bank security warning.
+</div>
+<div class="conclusion">
+<strong>Legal conclusion for this case study:</strong> The evidence does not support theft by Claire because the case file does not establish dishonest intent or an intention to permanently deprive the community association of its money.
+</div>
+<div class="warning">
+A serious mistake can cause loss without automatically becoming theft.
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Alex Morgan</strong><span class="badge">Youth member</span></div>
+<div class="card-body">
+<div class="fact">
+Alex was present in the building and was seen near the hallway, but there is no evidence that Alex accessed the bank account or made the transfer.
+</div>
+<div class="conclusion">
+<strong>Legal conclusion:</strong> The evidence does not establish that Alex committed an offence.
+</div>
+<div class="warning">
+Presence, rumours and suspicion are not proof.
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Daniel Reed</strong><span class="badge">Councillor</span></div>
+<div class="card-body">
+<div class="fact">
+Councillor Reed opposed the project and was present at the community centre, but the evidence does not connect him to the bank transfer or fraudulent email.
+</div>
+<div class="conclusion">
+<strong>Legal conclusion:</strong> Political disagreement may suggest motive in a mystery, but motive alone is not evidence of criminal conduct.
+</div>
+</div>
+</article>
+
+<article class="card">
+<div class="card-head"><strong>Unknown Scam Operator</strong><span class="badge">Unidentified</span></div>
+<div class="card-body">
+<div class="fact">
+The fraudulent email was designed to deceive the account holder into transferring funds to an account controlled by another person or group.
+</div>
+<div class="conclusion">
+<strong>Legal conclusion for the investigation:</strong> The strongest evidence points to an unknown offender using deception to obtain control of the community funds.
+</div>
+<div class="warning">
+The identity of that offender is not established by the student case file. Investigators must not invent an identity.
+</div>
+</div>
+</article>
+
+</section>
+
+<div class="section-heading">
+<small>Classroom Court</small>
+<h2>Suggested Court Proceedings</h2>
+</div>
+
+<section class="card">
+<div class="card-body">
+
+<div class="court-stage">
+<h3>1. Court Opens</h3>
+<div class="script">
+<strong>Magistrate/Judge:</strong> “This court will consider the evidence presented in relation to the disappearance of funds from the Banksia Creek Community Association. The court reminds all participants that allegations must be tested against evidence and law.”
+</div>
+</div>
+
+<div class="court-stage">
+<h3>2. Student Legal Teams Present</h3>
+<p>Each student or team presents their lawyer’s opening statement and final case theory. The class listens for:</p>
+<ul>
+<li>accurate use of evidence</li>
+<li>correct chronology</li>
+<li>legal principles</li>
+<li>acknowledgement of uncertainty</li>
+<li>fair treatment of each person involved</li>
+</ul>
+</div>
+
+<div class="court-stage">
+<h3>3. Evidence Challenge</h3>
+<p>The teacher may ask one or two questions after each presentation:</p>
+<ul>
+<li>Which exhibit is strongest?</li>
+<li>What evidence weakens your argument?</li>
+<li>What would the prosecution still need to prove?</li>
+<li>Have you treated any claim as if it were a fact?</li>
+<li>Would your conclusion meet the burden of proof?</li>
+</ul>
+</div>
+
+<div class="court-stage">
+<h3>4. Final Evidence Released</h3>
+<p>Reveal the confirmed banking and device information above. Students compare it with their original theory.</p>
+</div>
+
+<div class="court-stage">
+<h3>5. Court Finding</h3>
+<div class="script">
+<strong>Suggested finding:</strong> “The evidence does not establish that Alex Morgan, Daniel Reed or Claire Bennett committed theft. The evidence indicates that Claire Bennett was deceived into transferring the funds. The suspected criminal conduct lies with the unidentified person or group responsible for the fraudulent email and receiving account.”
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="verdict">
+<h2>Case Outcome</h2>
+<div class="verdict-grid">
+
+<div class="verdict-item">
+<strong>Alex Morgan</strong>
+<p>No offence established by the case evidence.</p>
+</div>
+
+<div class="verdict-item">
+<strong>Claire Bennett</strong>
+<p>Made the transfer, but dishonest criminal intent is not established.</p>
+</div>
+
+<div class="verdict-item">
+<strong>Unknown scam operator</strong>
+<p>Strongest evidence of deceptive criminal conduct; identity remains unknown.</p>
+</div>
+
+</div>
+</section>
+
+<section class="reflection">
+<h2>Final Civics & Citizenship Reflection</h2>
+<p>Students answer these after the final reveal:</p>
+<ol>
+<li>Which piece of evidence caused you to change or strengthen your theory?</li>
+<li>Why was the presumption of innocence important for Alex?</li>
+<li>Why is the burden of proof important when evidence is incomplete?</li>
+<li>How did the independent court process produce a fairer outcome than rumours or media speculation?</li>
+<li>What does this case show about the rule of law?</li>
+<li>If citizens believed the law or legal process needed to change, how could they participate in that change?</li>
+</ol>
+</section>
+
+</main>
+
+<footer>
+Banksia Creek Case File 26-417 is a fictional educational investigation for Year 7/8 Humanities.
+</footer>
+
+</body>
+</html>
